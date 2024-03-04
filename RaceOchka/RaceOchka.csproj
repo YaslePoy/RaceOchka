@@ -13,6 +13,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Aspose.3D" Version="24.2.0" />
     <PackageReference Include="OpenTK.Mathematics" Version="5.0.0-pre.9" />
   </ItemGroup>
 

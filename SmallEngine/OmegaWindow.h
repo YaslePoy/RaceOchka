@@ -218,7 +218,7 @@ private:
     void cleanupSwapChain();
     void cleanup();
     void recreateSwapChain();
-    void populateDebugMessengerCreateInfo(VkDebugUtilsMessengerCreateInfoEXT& createInfo);
+    static void populateDebugMessengerCreateInfo(VkDebugUtilsMessengerCreateInfoEXT& createInfo);
     void setupDebugMessenger();
     void createSurface();
     VkSampleCountFlagBits getMaxUsableSampleCount();

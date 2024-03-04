@@ -68,9 +68,13 @@ void OmegaWindow::Open()
     glfwSetKeyCallback(window, keyboard_handler);
 
     createInstance();
+    
     setupDebugMessenger();
+    
     createSurface();
+    
     pickPhysicalDevice();
+    
     createLogicalDevice();
 
     createSwapChain();
@@ -79,39 +83,28 @@ void OmegaWindow::Open()
 
     createRenderPass();
 
-
     createDescriptorSetLayout();
-
 
     createMainPipeline();
 
     createCommandPool();
 
     createColorResources();
-
-
+    
     createDepthResources();
 
     createFramebuffers();
     
-    std::cout << "VB start\n";
-
     createTextureImage();
     
-    std::cout << "IB finish\n";
-
     createTextureImageView();
 
     createTextureSampler();
-
-    std::cout << "VB start\n";
     
     createVertexBuffer();
 
     createIndexBuffer();
-
-    std::cout << "IB finish\n";
-
+    
     createUniformBuffers();
 
     createDescriptorPool();
@@ -285,9 +278,9 @@ void OmegaWindow::createInstance()
 
     VkApplicationInfo appInfo{};
     appInfo.sType = VK_STRUCTURE_TYPE_APPLICATION_INFO;
-    appInfo.pApplicationName = "Hello Triangle";
+    appInfo.pApplicationName = "RaceOchka";
     appInfo.applicationVersion = VK_MAKE_VERSION(1, 0, 0);
-    appInfo.pEngineName = "No Engine";
+    appInfo.pEngineName = "SmallEngine";
     appInfo.engineVersion = VK_MAKE_VERSION(1, 0, 0);
     appInfo.apiVersion = VK_API_VERSION_1_0;
 
@@ -641,7 +634,7 @@ void OmegaWindow::createMainPipeline()
 
     VkPipelineInputAssemblyStateCreateInfo inputAssembly{};
     inputAssembly.sType = VK_STRUCTURE_TYPE_PIPELINE_INPUT_ASSEMBLY_STATE_CREATE_INFO;
-    inputAssembly.topology = VK_PRIMITIVE_TOPOLOGY_TRIANGLE_LIST;
+    inputAssembly.topology = VK_PRIMITIVE_TOPOLOGY_LINE_LIST;
     inputAssembly.primitiveRestartEnable = VK_FALSE;
 
     VkPipelineViewportStateCreateInfo viewportState{};
